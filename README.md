@@ -1,5 +1,5 @@
 # vue-todo
-![vue-todo](https://user-images.githubusercontent.com/38612699/68195902-f08ce200-ffe1-11e9-8d9b-cec0048d9924.png)
+![vue-todo](https://user-images.githubusercontent.com/38612699/68195982-19ad7280-ffe2-11e9-9e56-186b8ec793a7.png)
 
 ## Project setup
 ```
