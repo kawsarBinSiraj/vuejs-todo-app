@@ -84,6 +84,9 @@ export default {
       if (this.isEdit.edit) {
         return this.confirmEdit(this.isEdit.id);
       }
+      if (this.todo.title === null || this.todo.title == "") {
+        return alert("please fill in the input");
+      }
       this.todo.id = this.todos.length + 1;
       this.todos.push(this.todo);
       this.resetForm();
@@ -109,6 +112,9 @@ export default {
       });
     },
     confirmEdit: function(currentId) {
+      if (this.todo.title === null || this.todo.title == "") {
+        return alert("please fill in the input");
+      }
       this.todos.forEach(item => {
         if (item.id === currentId) {
           item.title = this.todo.title;
@@ -121,19 +127,21 @@ export default {
       });
     },
     del(currentId) {
-      let todos = [];
-      this.todos.forEach(item => {
-        if (item.id !== currentId) {
-          todos.push(item);
-        }
-        if (item.id === currentId) {
-          this.recycleTodos.push({
-            ...item,
-            title: item.title
-          });
-        }
-      });
-      this.todos = todos;
+      if(confirm('Are you sure ?')) {
+        let todos = [];
+        this.todos.forEach(item => {
+          if (item.id !== currentId) {
+            todos.push(item);
+          }
+          if (item.id === currentId) {
+            this.recycleTodos.push({
+              ...item,
+              title: item.title
+            });
+          }
+        });
+        this.todos = todos;
+      }
     }
   }
 };
